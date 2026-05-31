@@ -1,0 +1,6 @@
+{
+  "name": "One Tap",
+  "description": "A minimal, neon-accented timing precision game. Tap at the perfect microsecond to stop the rotating ball inside the target zone.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
