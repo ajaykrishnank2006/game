@@ -1,21 +1,61 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# One Tap
 
-# Run and deploy your AI Studio app
+One Tap is an Android timing game built with Kotlin and Jetpack Compose. The player taps at the right moment as the target changes across levels. The app tracks hit and miss states, calculates accuracy, and stores best scores and leaderboard entries locally on the device.
 
-This contains everything you need to run your app locally.
+## Current features
 
-View your app in AI Studio: https://ai.studio/apps/99aaa1af-a5a1-48f5-af12-c75e3b3d56be
+- Home, game, result, and leaderboard screens
+- Ready, running, hit, and miss game states
+- Level-based timing and target adjustments
+- Accuracy and best-score tracking
+- Local score persistence using Android SharedPreferences
+- Generated sound effects and vibration feedback
 
-## Run Locally
+The leaderboard is local to the device. The repository code currently seeds example leaderboard entries, so these should not be interpreted as real player rankings.
 
-**Prerequisites:**  [Android Studio](https://developer.android.com/studio)
+## Tech stack
 
+- Kotlin
+- Android SDK
+- Jetpack Compose
+- AndroidX lifecycle / ViewModel
+- SharedPreferences
+- Android AudioTrack and vibration APIs
 
-1. Open Android Studio
-2. Select **Open** and choose the directory containing this project
-3. Allow Android Studio to fix any incompatibilities as it imports the project.
-4. Create a file named `.env` in the project directory and set `GEMINI_API_KEY` in that file to your Gemini API key (see `.env.example` for an example)
-5. Remove this line from the app's `build.gradle.kts` file: `signingConfig = signingConfigs.getByName("debugConfig")`
-6. Run the app on an emulator or physical device
+## Run locally
+
+1. Install Android Studio and the Android SDK required by the project.
+2. Clone this repository and open it in Android Studio.
+3. Allow Gradle sync to complete.
+4. Run the app on an emulator or a physical Android device.
+
+You can also build from the project root:
+
+```bash
+./gradlew assembleDebug
+```
+
+On Windows:
+
+```powershell
+.gradlew.bat assembleDebug
+```
+
+## Project structure
+
+- `app/`: Android application module
+- `app/src/main/java/`: Kotlin application source
+- `gradle/`: Gradle wrapper configuration
+- `build.gradle.kts`: root Gradle build configuration
+- `settings.gradle.kts`: project settings
+
+## Notes
+
+- Scores are stored locally. No online leaderboard or account sync is implemented in the inspected source.
+- The project contains generated build output and a development keystore-related file in the repository history/tree. Do not use a debug keystore for production signing.
+- Review the Gradle configuration and replace generic package identifiers before publishing a production app.
+- No license file is currently provided. All rights reserved by default unless a license is added.
+
+## Screenshots
+
+Add current screenshots of the running app here.
